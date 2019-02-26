@@ -1,0 +1,35 @@
+geostore.mis_informes:
+  path: '/mis-informes/{node}'
+  defaults:
+    _title: 'Mis Informes'
+    _controller: '\Drupal\geostore_informes\Controller\InformesController::getInformes'
+  requirements:
+    _permission: 'access content'
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+geostore.get_mas_buscados:
+  path: '/mis-informes/ajax/get_mas_buscados'
+  defaults:
+    _title: 'Mis Informes'
+    _controller: '\Drupal\geostore_informes\Controller\InformesController::getMasBuscados'
+  requirements:
+    _permission: 'access content'
+
+geostore.get_busquedas_por_hora:
+  path: '/mis-informes/ajax/get_busquedas_por_hora'
+  defaults:
+    _title: 'Mis Informes'
+    _controller: '\Drupal\geostore_informes\Controller\InformesController::getBusquedasPorHora'
+  requirements:
+    _permission: 'access content'
+
+geostore.get_busquedas_negocio:
+  path: '/mis-informes/ajax/get_busquedas_negocio'
+  defaults:
+    _title: 'Mis Informes'
+    _controller: '\Drupal\geostore_informes\Controller\InformesController::getBusquedasNegocio'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,344 @@
+/* 
+Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass
+*/
+
+// import files
+@import "typography";
+@import "import";
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+body {
+    background: $white;
+}
+
+
+/* COLORS 
+--------------------------------------------------*/
+
+a {
+    color: $accent-shade;
+}
+
+.bg-inverse {
+    background: $primary-shade !important;
+}
+
+.site-footer {
+    background: $accent-shade !important;
+}
+
+.menu--main li a {
+    color: $primary-shade;
+}
+
+.menu--account a, .menu--footer a  {
+    color: $color-lighter;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.site-name-slogan a {
+    text-decoration: none;
+}
+
+.card-group img {
+    margin: 0;
+    width: 100%;
+    height: auto;
+}
+
+.card-group .field--type-image {
+    margin: 0
+}
+
+.slick {
+    width: 100%;
+}
+
+.slick>div {
+    margin: 0 15px;
+}
+
+html, body{
+    background-color: #e7e7e7;
+    font-family: "Lato";
+    margin: 0px;
+    padding: 0px;
+}
+
+#toolbar-bar{
+    position: absolute;
+}
+
+a:hover{
+    text-decoration: none;
+    opacity: .8;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+}
+
+.bg-lighter{
+    background-color: $color-lighter;
+}
+
+.bg-normal{
+    background-color: $color-normal;
+}
+
+.bg-strong{
+    background-color: $color-strong;
+}
+
+.color-lighter{
+    color: $color-lighter;
+}
+
+.color-normal{
+    color: $color-normal;
+}
+
+.color-strong{
+    color: $color-strong;
+}
+
+.header-navbar .is-active{
+    background-color: #50457b !important;
+}
+
+.sticky-navbar{
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+}
+
+h1{
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bold;
+}
+h2{
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+h4{
+    text-transform: uppercase;
+    color: #1c1124;
+}
+
+h5{
+  text-align: center;
+  color: $color-strong;
+}
+
+.region-sidebar-second{
+    background-color: transparent;
+    border: 0px;
+    box-shadow: none;
+}
+
+.header-navbar{
+    margin-bottom: 0px;
+    border: 0px;
+    border-radius: 0px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.logo-header{
+    text-align: center;
+    margin: 2em 0;
+    background-color: $color-strong;
+}
+
+.block-hero{
+    background:url(https://4.bp.blogspot.com/_AQ0vcRxFu0A/S9shDGGyMTI/AAAAAAAAAYk/kn3WTkY2LoQ/s1600/IMG_0714.JPG);
+    background-size:cover;
+    background-position:center center;
+    background-attachment:fixed;
+}
+
+.block-hero .inner{
+    min-height:300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.block-hero .inner #search-block-form .form-control#edit-keys{
+    background: transparent;
+    opacity: .8;
+    color: white;
+    width: 13rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+}
+
+.card-1 {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.card-1:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.card-3 {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.card-4 {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.card-5 {
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+
+.administration-panel .block-area:hover{
+    opacity: .8;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -webkit-transition: opacity .5s ease-in-out;
+}
+
+.administration-panel .block-area{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.administration-panel .block-area:after{
+  content: "";
+  display: block;
+  padding-bottom: 50%;
+}
+
+.administration-panel .block-area .info-container{
+    width: auto;
+    text-align: center;
+}
+
+.administration-panel .offers{
+    background-color: #74b49b;
+}
+
+.administration-panel .deal{
+    background-color: #50457b;
+}
+
+.administration-panel .reports{
+    background-color: #50457b;
+}
+
+.administration-panel .block-area .info-container{
+    opacity: 0.7;
+}
+
+.administration-panel .block-area .info-container .block-area-title{
+    color: #f7f7f7;
+}
+
+.menu--footer > li{
+    display: inline-block;
+}
+
+.menu--footer > li > a, .menu--main > li > a{
+    color: #e7e7e7 !important;
+}
+
+.menu--footer > li > a:hover{
+    background: transparent;
+    text-decoration: underline;
+}
+
+.download-label{
+    color: #e7e7e7;
+    font-weight: 400;
+}
+
+.android-icon{
+    width: 2em;
+    display: inline-block;
+}
+
+.region-footer{
+    border-bottom: solid 1px $color-lighter;
+    padding-bottom: 2em;
+}
+
+.block-negocios-front{
+    margin-top: 2em;
+}
+
+.block-negocios-front .negocio-element-view-front{
+    color: #1c1124;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 1em;
+    margin: 1em;
+    text-align: center;
+}
+
+.block-negocios-front .negocio-element-view-front a{
+    color: #1c1124;
+}
+
+.block-negocios-front .negocio-element-view-front .negocio-image img{
+    display: inline-block;
+    border-radius: 50px;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    width: 6rem;
+    height: 6rem;
+}
+
+.block-negocios-front .negocio-element-view-front:hover{
+    background-color: #f0f0f0;
+    opacity: .8;
+}
+
+.btn-primary{
+    background-color: #50457b;
+    border-color: $color-strong;
+}
+
+.btn-primary:hover{
+    background-color: #1c1124;
+    border-color: #1c1124;
+    transition: background-color .5s ease-in-out;
+    -moz-transition: background-color .5s ease-in-out;
+    -webkit-transition: background-color .5s ease-in-out;
+    transition: border-color .5s ease-in-out;
+    -moz-transition: border-color .5s ease-in-out;
+    -webkit-transition: border-color .5s ease-in-out;
+}
+
+.footer{
+    margin-top: 45px;
+    padding-top: 35px;
+    padding-bottom: 36px;
+    border-top: 1px solid #E5E5E5;
+}

@@ -1,0 +1,36 @@
+<div role="full-main" class="administration-panel bg-strong w-100">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <a href="{{ path('entity.node.canonical', {'node': user_company.id}) }}">
+          <div class="block-area card-1 deal">
+            <div class="info-container">
+              <img src="{{theme_path}}/images/briefcase(1).png" />
+              <h2 class="block-area-title">Mi Negocio</h1>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="mis-ofertas/{{user_company.id}}">
+          <div class="block-area card-1 offers">
+            <div class="info-container">
+              <img src="{{theme_path}}/images/cart-outline(1).png" />
+              <h2 class="block-area-title">Mis ofertas</h1>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a href="mis-informes/{{user_company.id}}">
+          <div class="block-area card-1 reports">
+            <div class="info-container">
+              <img src="{{theme_path}}/images/chart-line(1).png" />
+              <h2 class="block-area-title">Informes</h1>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

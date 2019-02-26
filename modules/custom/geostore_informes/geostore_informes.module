@@ -1,0 +1,17 @@
+<?php
+
+function geostore_informes_theme($existing, $type, $theme, $path) {
+  return [
+  	'page__mis_informes' => [
+
+    ],
+    'geostore_informes' => [
+      'variables' => [
+      	'node' => NULL,
+      	'test' => NULL,
+      	'busquedas_cercanas' => NULL,
+      	'attached' => NULL,
+      ],
+    ],
+  ];
+}

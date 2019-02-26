@@ -1,0 +1,10 @@
+<?php
+
+function geostore_busquedas_preprocess_node(&$variables) {
+	$node = $variables["node"];
+	$user_session = \Drupal::currentUser();
+
+	if($node->type->getString() == 'negocio'){
+		\Drupal::service('geostore_busquedas.negocios_catalog')->insertBusqueda($node->id(),time(),$user_session->id());
+	}
+}

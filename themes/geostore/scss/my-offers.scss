@@ -1,0 +1,12 @@
+*{
+	
+}
+
+.btn-offer{
+	a{
+		background: none !important;
+		&:hover,&:focus{
+			background: none !important;
+		}
+	}
+}

@@ -1,0 +1,101 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ */
+function geostore_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = array(
+      'bg-primary' => t('Primary'),
+      'bg-secondary' => t('Secondary'),
+      'bg-light' => t('Light'),
+      'bg-dark' => t('Dark'),
+      'bg-white' => t('White'),
+      'bg-transparent' => t('Transparent'),
+  );
+}
+
+function geostore_preprocess(&$variables){
+  $variables['theme_path'] = base_path() . "themes/geostore";
+}
+
+function geostore_preprocess_block(&$variables){
+
+  switch ($variables["elements"]["#id"]) {
+    case 'imagenheadernegocio':
+      geostore_preprocess_block_imagenheadernegocio($variables);
+      break;
+
+    case 'geostore_panelcomerciante':
+      geostore_preprocess_block_geostore_panelcomerciante($variables);
+      break;
+    
+    default:
+      # code...
+      break;
+  }
+}
+
+function geostore_preprocess_block_geostore_panelcomerciante(&$variables){
+  $uid = \Drupal::currentUser()->id();
+  $result_user_company = \Drupal::entityTypeManager()
+    ->getStorage('node')
+    ->loadByProperties(['type' => 'negocio' , 'field_dueno' => $uid]);
+
+  if ($user_company = reset($result_user_company)) {
+    $variables["user_company"] = $user_company;
+  }
+}
+
+function geostore_preprocess_block_imagenheadernegocio(&$variables){
+  $node = \Drupal::routeMatch()->getParameter('node');
+  $variables["imagenheader"] = $node->field_imagen_header;
+  $variables["imagenperfil"] = $node->field_image;
+}
+
+function geostore_preprocess_node(&$variables){
+  $node = $variables["elements"]["#node"];
+  if($node->type->getString() == "negocio"){
+    $variables['#attached']['drupalSettings']['latitud'] = floatval($node->field_latitud->getString());
+    $variables['#attached']['drupalSettings']['longitud'] = floatval($node->field_longitud->getString());
+  }
+  //if($variables["node"])
+}
+
+function geostore_form_alter(&$form, $form_state, $form_id){
+  $current_user_id = \Drupal::currentUser()->id();
+
+  if($form_id == "node_oferta_form") {
+    $current_user_company_nid = geostore_get_user_company($current_user_id);
+    if($current_user_company_nid){
+      $form["field_negocio"]["widget"]["#default_value"] = array($current_user_company_nid);
+    }
+  };
+}
+
+function geostore_get_user_company($uid){
+  $nodes = \Drupal::entityTypeManager()
+    ->getStorage('node')
+    ->loadByProperties(['field_usuario' => $uid]);
+
+  if ($node = reset($nodes)) {
+    return $node->nid->value;
+  }
+}

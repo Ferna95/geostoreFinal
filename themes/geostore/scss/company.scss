@@ -1,0 +1,109 @@
+@import "variables";
+
+.block-views-blockofertas-block-1{
+	.views-field-title{
+		.field-content{
+		    font-size: 1.25rem;
+			text-transform: uppercase;
+		}
+	}
+}
+.views-field-field-precio{
+	text-align: right;	
+	.field-content{
+	    display: inline-block;
+	}
+}
+.paragraph--type--producto-de-oferta{
+	& > div:first-child{
+		color: $color-strong;
+	};
+	.field--name-field-cantidad{
+		font-size: 0.7rem;
+	}
+}
+
+.img-header-company{
+    width: 100%;
+    display: block;
+    height: 260px;
+    object-fit: cover;
+    object-position: center;
+    border-bottom: solid $color-strong 0.4rem;
+}
+
+.img-perfil-company{
+	width: 13rem;
+    display: block;
+    height: 13rem;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    position: absolute;
+    top: 9rem;
+    border-radius: 10rem;
+    border: solid $color-strong 0.4rem;
+}
+
+.company-node{
+	.field__label{
+		font-weight: bold;
+		&:after{
+			content: ":";
+		};
+	}
+}
+
+#map {
+	width: 100%;
+	height: 400px;
+	background-color: grey;
+}
+
+.field--name-user-picture{
+	img{
+		border-radius: 20rem;
+	    width: 3rem;
+	    height: 3rem;
+	    -o-object-fit: cover;
+	    object-fit: cover;
+	    -o-object-position: center;
+	    object-position: center;
+	}
+}
+
+.marker-icon{
+	width: 1rem;
+}
+
+.title-offers{
+	.offer-icon{
+		width: 1.3rem;
+	}
+	h5{
+		font-style: italic;
+		font-weight: bold;
+	}
+}
+
+.nav-tabs{
+	.nav-link{
+		font-weight: bold;
+		color: $color-strong;
+		&:hover, &.active{
+			border-bottom: solid $color-strong 0.3rem;
+			background: transparent;
+		};
+	}
+}
+
+.icon-clock{
+	width: 16px;
+}
+
+.field--name-field-horarios{
+	.field__label{
+		vertical-align: top;
+	}
+}

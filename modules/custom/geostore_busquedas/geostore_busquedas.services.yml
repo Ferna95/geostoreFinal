@@ -1,0 +1,5 @@
+services:
+  geostore_busquedas.productos_catalog:
+    class: Drupal\geostore_busquedas\BusquedasProductosCatalog
+  geostore_busquedas.negocios_catalog:
+    class: Drupal\geostore_busquedas\BusquedasNegociosCatalog

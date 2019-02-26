@@ -1,0 +1,8 @@
+name: Informes Geostore
+description: Módulo para la configuración general de informes para comerciante de Geostore
+package: Custom
+type: module
+version: 1.0.1
+core: 8.x
+dependencies:
+  - drupal:geostore_busquedas

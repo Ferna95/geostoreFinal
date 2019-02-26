@@ -1,0 +1,27 @@
+global-styling:
+  version: VERSION
+  js: 
+    js/popper.min.js: {}
+    js/bootstrap.min.js: {}
+    js/global.js: {}
+  css:
+    component:
+      css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+
+company:
+  css:
+    component:
+      css/company.css: {}
+  js:
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyA0p-UhCxpwSf-9rlBWWIeATz5dPXHlyFQ: {}
+    js/company.js: {}
+  dependencies:
+    - core/drupalSettings
+
+my-offers:
+  css:
+    component:
+      css/my-offers.css: {}

@@ -1,0 +1,49 @@
+{#
+/**
+ * @file
+ * Theme override for a views exposed form.
+ *
+ * Available variables:
+ * - form: A render element representing the form.
+ *
+ * @see template_preprocess_views_exposed_form()
+ */
+#}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+{{ q }}
+{% endif %}
+<div class="">
+	<div class="col-md-12">
+		<h4>Filtros</h4>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			{{form.status}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			{{form.title}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			{{form.sort_by}}
+		</div>
+		<div class="col-md-6">
+			{{form.sort_order}}
+		</div>
+	</div>
+	{{form_build_id}}
+	{{form.form_id}}
+	{{form.form_token}}
+	<div class="text-right">
+		<div class="col-md-12">
+			{{form.actions}}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,10 @@
+{
+    "name": "drupal/geostore",
+    "type": "drupal-theme",
+    "description": "Geostore Bootstrap Barrio Subttheme.",
+    "homepage": "http://drupal.org/project/bootstrap_sass",
+    "license": "GPL-2.0+",
+    "require": {
+        "drupal/bootstrap_barrio": "^4.8.0"
+    }
+}
