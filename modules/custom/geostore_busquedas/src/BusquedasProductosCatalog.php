@@ -58,4 +58,18 @@ class BusquedasProductosCatalog{
 
 	}
 
+	//SEARCH PRODUCTOS BY STIRNG TITLE
+	public function getProductosByTitle($string){
+
+		$query = \Drupal::entityQuery('node')
+		    ->condition('status', 1)
+		    ->condition('type', 'producto')
+		    ->condition('title', '%' . $string . '%' , 'LIKE');
+		$nids = $query->execute();
+
+		$productos = \Drupal\node\Entity\Node::loadMultiple($nids);
+		
+		return $productos;
+	}
+
 }

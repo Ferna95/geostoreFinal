@@ -3,3 +3,5 @@ services:
     class: Drupal\geostore_busquedas\BusquedasProductosCatalog
   geostore_busquedas.negocios_catalog:
     class: Drupal\geostore_busquedas\BusquedasNegociosCatalog
+  geostore_busquedas.ofertas_catalog:
+    class: Drupal\geostore_busquedas\BusquedasOfertasCatalog

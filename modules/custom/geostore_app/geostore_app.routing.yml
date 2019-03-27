@@ -1,0 +1,31 @@
+geostore.negocios_by_title:
+  path: '/api/v1/negocios'
+  defaults:
+    _title: 'Búsqueda de negocios'
+    _controller: '\Drupal\geostore_app\Controller\BusquedaNegociosController::getNegociosByTitle'
+  requirements:
+    _permission: 'access content'
+
+geostore.productos_by_title:
+  path: '/api/v1/productos'
+  defaults:
+    _title: 'Búsqueda de productos'
+    _controller: '\Drupal\geostore_app\Controller\BusquedaProductosCercanosController::getProductosByTitle'
+  requirements:
+    _permission: 'access content'
+
+geostore.negocios_cercanos_by_producto_id:
+  path: '/api/v1/negocios_producto'
+  defaults:
+    _title: 'Búsqueda de negocios cercanos por id de producto'
+    _controller: '\Drupal\geostore_app\Controller\BusquedaProductosCercanosController::getNegociosCercanosByNid'
+  requirements:
+    _permission: 'access content'
+
+geostore.ofertas:
+  path: '/api/v1/ofertas'
+  defaults:
+    _title: 'Búsqueda de ofertas cercanas'
+    _controller: '\Drupal\geostore_app\Controller\BusquedaOfertasCercanasController::getOfertasCercanas'
+  requirements:
+    _permission: 'access content'
