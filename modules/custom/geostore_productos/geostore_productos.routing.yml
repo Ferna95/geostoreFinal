@@ -4,7 +4,7 @@ geostore.actualizar_catalogo:
     _title: 'Actualizar catálogo'
     _form: '\Drupal\geostore_productos\Form\ActualizarCatalogo'
   requirements:
-    _permission: 'access content'
+    _role: 'administrator'
 
 geostore.actualizar_productos_negocio:
   path: 'admin/actualizar-productos-negocio'
@@ -12,4 +12,4 @@ geostore.actualizar_productos_negocio:
     _title: 'Actualizar productos de negocio'
     _form: '\Drupal\geostore_productos\Form\ActualizarProductosNegocio'
   requirements:
-    _permission: 'access content'
+    _role: 'administrator'

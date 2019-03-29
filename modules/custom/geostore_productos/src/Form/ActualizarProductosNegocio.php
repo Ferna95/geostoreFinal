@@ -25,6 +25,7 @@ class ActualizarProductosNegocio extends FormBase {
     $form['negocio'] = array(
       '#type' => "entity_autocomplete",
       '#target_type' => 'node',
+      '#required' => TRUE,
       '#selection_settings' => ['target_bundles' => ["negocio"]],
     );
     
