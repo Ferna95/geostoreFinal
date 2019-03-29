@@ -72,4 +72,20 @@ class BusquedasProductosCatalog{
 		return $productos;
 	}
 
+ 	public function getProductoByCode($code){
+	    $nodes = \Drupal::entityTypeManager()
+	      ->getStorage('node')
+	      ->loadByProperties([
+	        'field_codigo_interno' => $code,
+	        'type' => 'producto',
+	      ]);
+
+	    if ($node = reset($nodes)) {
+	      return $node;
+	    }
+	    else{
+	      return false;
+	    }
+  	}
+
 }

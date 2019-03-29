@@ -1,0 +1,15 @@
+geostore.actualizar_catalogo:
+  path: 'admin/actualizar-catalogo'
+  defaults:
+    _title: 'Actualizar catálogo'
+    _form: '\Drupal\geostore_productos\Form\ActualizarCatalogo'
+  requirements:
+    _permission: 'access content'
+
+geostore.actualizar_productos_negocio:
+  path: 'admin/actualizar-productos-negocio'
+  defaults:
+    _title: 'Actualizar productos de negocio'
+    _form: '\Drupal\geostore_productos\Form\ActualizarProductosNegocio'
+  requirements:
+    _permission: 'access content'

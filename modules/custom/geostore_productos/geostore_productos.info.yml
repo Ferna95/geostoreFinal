@@ -1,0 +1,6 @@
+name: Productos Geostore
+description: Módulo para la gestión de productos de Geostore a través de Planilla Excel
+package: Custom
+type: module
+version: 1.0.1
+core: 8.x
