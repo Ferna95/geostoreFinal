@@ -12,19 +12,19 @@
   loadProductsGraphic();
   loadTimeGraphic();
   loadCompanyGraphic();
-  
   $("#periodo").on('change',function(e){
     cantidadProductos = $('#cantidadProductos').children("option:selected").val();
     periodo = $(this).children("option:selected").val();
 
     $.ajax({
-      url: "http://localhost/geostore_testing/mis-informes/ajax/get_mas_buscados", 
+      url: drupalSettings.path.baseUrl + "mis-informes/ajax/get_mas_buscados", 
       type: 'POST',
       data: { 
         cantidadProductos: cantidadProductos, 
         periodo : periodo
       },
       success: function(result){
+        console.log(result);
         product_graphic.destroy();
         drupalSettings.mas_buscados.nids = result.mas_buscados.nids;
         drupalSettings.mas_buscados.count = result.mas_buscados.count;
@@ -38,13 +38,14 @@
     periodo = $('#periodo').children("option:selected").val();
 
     $.ajax({
-      url: "http://localhost/geostore_testing/mis-informes/ajax/get_mas_buscados", 
+      url: drupalSettings.path.baseUrl + "mis-informes/ajax/get_mas_buscados", 
       type: 'POST',
       data: { 
         cantidadProductos: cantidadProductos, 
         periodo : periodo
       },
       success: function(result){
+        console.log(result);
         product_graphic.destroy();
         drupalSettings.mas_buscados.nids = result.mas_buscados.nids;
         drupalSettings.mas_buscados.count = result.mas_buscados.count;
@@ -57,12 +58,13 @@
     periodoHora = $(this).children("option:selected").val();
 
     $.ajax({
-      url: "http://localhost/geostore_testing/mis-informes/ajax/get_busquedas_por_hora", 
+      url: drupalSettings.path.baseUrl + "mis-informes/ajax/get_busquedas_por_hora", 
       type: 'POST',
       data: { 
         periodoHora: periodoHora, 
       },
       success: function(result){
+        console.log(result);
         hours_graphic.destroy();
         drupalSettings.busquedas_por_hora.hours = result.busquedas_por_hora.hours;
         drupalSettings.busquedas_por_hora.count = result.busquedas_por_hora.count;
@@ -75,7 +77,7 @@
     periodoNegocio = $(this).children("option:selected").val();
     console.log(drupalSettings);
     $.ajax({
-      url: "http://localhost/geostore_testing/mis-informes/ajax/get_busquedas_negocio", 
+      url: drupalSettings.path.baseUrl + "mis-informes/ajax/get_busquedas_negocio", 
       type: 'POST',
       data: { 
         periodoNegocio: periodoNegocio, 

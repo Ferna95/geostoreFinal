@@ -117,12 +117,13 @@ a:hover{
 
 h1{
     text-transform: uppercase;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
+    margin: 1rem 0 !important
 }
 h2{
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
@@ -156,18 +157,21 @@ h5{
 }
 
 .block-hero{
-    background:url(https://4.bp.blogspot.com/_AQ0vcRxFu0A/S9shDGGyMTI/AAAAAAAAAYk/kn3WTkY2LoQ/s1600/IMG_0714.JPG);
     background-size:cover;
     background-position:center center;
     background-attachment:fixed;
+    -webkit-box-shadow: inset 0px 0px 300px 200px rgba(0,0,0,0.33);
+    -moz-box-shadow: inset 0px 0px 300px 200px rgba(0,0,0,0.33);
+    box-shadow: inset 0px 0px 300px 200px rgba(0,0,0,0.33);
 }
 
 .block-hero .inner{
-    min-height:300px;
+    min-height:500px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 

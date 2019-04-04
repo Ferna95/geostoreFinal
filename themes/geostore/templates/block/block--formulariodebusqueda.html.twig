@@ -43,15 +43,19 @@
     'w-100'
   ]
 %}
-<div{{ attributes.addClass(classes) }}>
-  <div class="inner">
+<div{{ attributes.addClass(classes) }} style="background:url({{base_path}}themes/geostore/images/background-home.png);">
+  <div class="inner container">
     {{ title_prefix }}
     {% if label %}
       <h2{{ title_attributes.addClass('visually-hidden') }}>{{ label }}</h2>
     {% endif %}
     {{ title_suffix }}
     {% block content %}
-      {{ content }}
+      <div>
+        <h2 class="text-white">Geostore</h2>
+        <span class="text-white d-block">Si sos comerciante comunicate con nosotros y hacé conocido tu negocio.</span>
+        <span class="text-white d-block">Si querés localizar negocios cercanos a vos descargate nuestra app y empezá a buscar.</span>
+      </div>
     {% endblock %}
   </div>
 </div>

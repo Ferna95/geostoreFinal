@@ -33,6 +33,7 @@ function geostore_form_system_theme_settings_alter(&$form, FormStateInterface $f
 }
 
 function geostore_preprocess(&$variables){
+  $variables['base_path'] = base_path();
   $variables['theme_path'] = base_path() . "themes/geostore";
 }
 
@@ -85,15 +86,21 @@ function geostore_form_alter(&$form, $form_state, $form_id){
   if($form_id == "node_oferta_form") {
     $current_user_company_nid = geostore_get_user_company($current_user_id);
     if($current_user_company_nid){
-      $form["field_negocio"]["widget"]["#default_value"] = array($current_user_company_nid);
+      $form["field_negocio"]["widget"][0]['target_id']['#default_value'] = \Drupal\node\Entity\Node::load($current_user_company_nid);
     }
   };
+
+  if($form_id == "node_oferta_edit_form" || $form_id == "node_oferta_form"){
+    $form['title']['#attributes'] = array('class' => ['w-100']);
+    $form['body']['#attributes'] = array('class' => ['w-100']);
+    $form['actions']['delete']['#attributes'] = array('class' => ['btn','btn-secondary','w-100']);
+  }
 }
 
 function geostore_get_user_company($uid){
   $nodes = \Drupal::entityTypeManager()
     ->getStorage('node')
-    ->loadByProperties(['field_usuario' => $uid]);
+    ->loadByProperties(['field_dueno' => $uid]);
 
   if ($node = reset($nodes)) {
     return $node->nid->value;

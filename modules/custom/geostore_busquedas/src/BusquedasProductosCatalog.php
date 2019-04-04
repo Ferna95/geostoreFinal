@@ -88,4 +88,23 @@ class BusquedasProductosCatalog{
 	    }
   	}
 
+  	/*
+  	NID: ID DE PRODUCTO
+	CREATED: FECHA DE CREACION DE BUSQUEDA
+	LATITUD Y LONGITUD: GEOPOSICION DESDE DONDE SE HIZO LA BUSQUEDA (APP)
+	UID: USUARIO QUE HIZO LA BUSQUEDA
+	*/
+	public function insertBusqueda($nid,$created,$latitud,$longitud,$uid = 0){
+		db_insert('geostore_busquedas_productos')
+			->fields(
+				array(
+				'nid' => $nid,
+				'created' => $created,
+				'longitud' => $longitud,
+				'latitud' => $latitud,
+				'uid' => $uid,
+				)
+			)->execute();
+	}
+
 }

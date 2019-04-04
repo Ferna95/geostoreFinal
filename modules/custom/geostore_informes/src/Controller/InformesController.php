@@ -18,9 +18,9 @@ class InformesController extends ControllerBase {
  public function getInformes($node){
 
  	$busquedas_cercanas = \Drupal::service('geostore_busquedas.productos_catalog')->getBusquedasCercanas(1,1,3,1);
-  $mas_buscados = \Drupal::service('geostore_busquedas.productos_catalog')->getMasBuscados(1,1,1,25200);
-  $busquedas_por_hora = \Drupal::service('geostore_busquedas.productos_catalog')->getBusquedasPorHora(1,2,1,25200);
-  $busquedas_negocio = \Drupal::service('geostore_busquedas.negocios_catalog')->getBusquedas($node->id(),1);
+  $mas_buscados = \Drupal::service('geostore_busquedas.productos_catalog')->getMasBuscados(1,1,1,604800);
+  $busquedas_por_hora = \Drupal::service('geostore_busquedas.productos_catalog')->getBusquedasPorHora(1,2,1,604800);
+  $busquedas_negocio = \Drupal::service('geostore_busquedas.negocios_catalog')->getBusquedas($node->id(),604800);
   
  	return [
       '#theme' => 'geostore_informes',

@@ -51,7 +51,6 @@ class BusquedasNegociosCatalog{
 	}
 
 	public function getNegociosCercanosByProductoNid($pnid,$latitud,$longitud,$range){
-
 		$query = \Drupal::entityQuery('node')
 		    ->condition('status', 1)
 		    ->condition('type', 'negocio');
@@ -87,8 +86,8 @@ class BusquedasNegociosCatalog{
 			$negocio_longitud = floatval($negocio->field_longitud->getString());
 			if( $negocio_latitud <= ($latitud + $range) &&
 		 		$negocio_latitud >= ($latitud - $range) &&
-		 		$negocio_latitud <= ($longitud + $range) &&
-		 		$negocio_latitud >= ($longitud - $range) ){
+		 		$negocio_longitud <= ($longitud + $range) &&
+		 		$negocio_longitud >= ($longitud - $range) ){
 				$negocios_filtered[$nid] = $negocio;
 			}
 		}
