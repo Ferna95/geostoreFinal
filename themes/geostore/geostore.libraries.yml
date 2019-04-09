@@ -16,8 +16,11 @@ company:
     component:
       css/company.css: {}
   js:
+    https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js: {}
+    js/axios.min.js: {}
     https://maps.googleapis.com/maps/api/js?key=AIzaSyA0p-UhCxpwSf-9rlBWWIeATz5dPXHlyFQ: {}
     js/company.js: {}
+    js/v-company.js: {}
   dependencies:
     - core/drupalSettings
 

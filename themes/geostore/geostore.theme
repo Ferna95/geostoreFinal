@@ -74,8 +74,14 @@ function geostore_preprocess_block_imagenheadernegocio(&$variables){
 function geostore_preprocess_node(&$variables){
   $node = $variables["elements"]["#node"];
   if($node->type->getString() == "negocio"){
+    
     $variables['#attached']['drupalSettings']['latitud'] = floatval($node->field_latitud->getString());
     $variables['#attached']['drupalSettings']['longitud'] = floatval($node->field_longitud->getString());
+    $variables['#attached']['drupalSettings']['id_company'] = $node->id();
+
+    $product_categories = \Drupal::entityTypeManager()->getStorage('taxonomy_term')->loadTree('categorias_de_productos');
+    $variables['product_categories'] = $product_categories;
+
   }
   //if($variables["node"])
 }

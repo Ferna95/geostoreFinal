@@ -148,16 +148,44 @@
       
       {% if content.field_productos_del_negocio|render %}
       <div class="tab-pane fade" id="nav-products" role="tabpanel" aria-labelledby="nav-products-tab">
-        <div class="row">
-          <div class="col-md-12">
-            {{ content.field_productos_del_negocio }}
+        <div id="productos_negocio" class="mb-3">
+          <div class="row">
+            <div class="col">
+                <input v-model="input_name" class="form-control" type='text' id="nombre" placeholder="Nombre de producto" />
+            </div>
+            <div class="col">
+                <select class="form-control" v-model="input_category">
+                  <option selected value=''> -- Categorías -- </option>
+                  {% for key,category in product_categories %}
+                    <option value='{{key}}'>{{category.name}}</option>
+                  {% endfor %}
+                </select>
+            </div>
           </div>
+          <div{{ attributes.addClass(classes) }}>
+            <div class='field__items row'>
+              <div class="field__item col-md-4 p-3" v-for="product in products">
+                <div class="card m-0 w-100 h-100">
+                  <div class="card-body">
+                    <article>
+                      <h4 class="color-strong text-uppercase"><b>${ product.field_producto }</b></h4>
+                      <div class="text-center">
+                        <img class="img-fluid" v-bind:src=product.field_image />
+                      </div>
+                      <div class="text-right" v-if="isVisiblePrice(product)">${ product.field_precio }</div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div>
         </div>
+      </div>
       </div>
       {% endif %}
 
     </div>
-    <div class="container">
+    <div>
       <div class="row">
         <div class="col-md-12">
           {{content.field_comentarios}}
