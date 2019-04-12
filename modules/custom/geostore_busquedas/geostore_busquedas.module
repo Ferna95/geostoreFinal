@@ -8,3 +8,9 @@ function geostore_busquedas_preprocess_node(&$variables) {
 		\Drupal::service('geostore_busquedas.negocios_catalog')->insertBusqueda($node->id(),time(),$user_session->id());
 	}
 }
+
+
+//0,0008984725965858041° EQUIVALE A 100 MTS
+function geostore_busquedas_convert_meters_to_degrees($mts){
+	return $mts * 0.000008984725965858041;
+}

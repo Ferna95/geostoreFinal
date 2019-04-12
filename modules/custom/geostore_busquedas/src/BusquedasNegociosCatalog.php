@@ -37,7 +37,7 @@ class BusquedasNegociosCatalog{
 
 
 	//SEARCH NEGOCIOS BY STIRNG TITLE
-	public function getNegociosByTitle($string){
+	public function getNegociosByTitle($string,$range,$latitud,$longitud){
 
 		$query = \Drupal::entityQuery('node')
 		    ->condition('status', 1)
@@ -46,8 +46,10 @@ class BusquedasNegociosCatalog{
 		$nids = $query->execute();
 
 		$negocios = \Drupal\node\Entity\Node::loadMultiple($nids);
+
+		$negocios_filtered = $this->filterNegociosByRange($negocios,$latitud,$longitud,$range);
 		
-		return $negocios;
+		return $negocios_filtered;
 	}
 
 	public function getNegociosCercanosByProductoNid($pnid,$latitud,$longitud,$range){

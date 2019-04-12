@@ -16,7 +16,12 @@ class BusquedaNegociosController extends ControllerBase {
 
 
  public function getNegociosByTitle(){
-  	$negocios = \Drupal::service('geostore_busquedas.negocios_catalog')->getNegociosByTitle($_GET['keys']);
+ 	$keys = $_GET['keys'];
+ 	$latitud = $_GET['latitud'];
+ 	$longitud = $_GET['longitud'];
+ 	$range = $_GET['range'];
+ 	$degrees_range = geostore_busquedas_convert_meters_to_degrees($range);
+  	$negocios = \Drupal::service('geostore_busquedas.negocios_catalog')->getNegociosByTitle($keys,$degrees_range,$latitud,$longitud);
  	$result = array();
  	foreach ($negocios as $key => $negocio) {
  		$result[] = array(

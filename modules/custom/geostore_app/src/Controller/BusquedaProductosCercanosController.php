@@ -37,8 +37,9 @@ class BusquedaProductosCercanosController extends ControllerBase {
  	$latitud = $_GET['latitud'];
  	$longitud = $_GET['longitud'];
  	$range = $_GET['range'];
+ 	$degrees_range = geostore_busquedas_convert_meters_to_degrees($range);
  	//\Drupal::service('geostore_busquedas.productos_catalog')->insertBusqueda($producto_id,time(),$latitud,$longitud);
-  	$negocios = \Drupal::service('geostore_busquedas.negocios_catalog')->getNegociosCercanosByProductoNid($producto_id,$latitud,$longitud,$range);
+  	$negocios = \Drupal::service('geostore_busquedas.negocios_catalog')->getNegociosCercanosByProductoNid($producto_id,$latitud,$longitud,$degrees_range);
 
  	$result = array();
  	foreach ($negocios as $key => $negocio) {
